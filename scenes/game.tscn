@@ -1,12 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgsuc00v1265t"]
+[gd_scene load_steps=11 format=3 uid="uid://dgsuc00v1265t"]
 
-[ext_resource type="PackedScene" uid="uid://c4kx5xccyhajy" path="res://scenes/player.tscn" id="1_n234g"]
-[ext_resource type="Texture2D" uid="uid://woff580w358y" path="res://assets/brackeys_platformer_assets copy/sprites/world_tileset.png" id="2_wjney"]
-[ext_resource type="Script" path="res://day_night_cycle.gd" id="3_c6ma0"]
-[ext_resource type="Texture2D" uid="uid://ci8q5e1rg11v" path="res://assets/daynightcycle-gradient-texture.tres" id="4_ym3bw"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wdv5o"]
+[ext_resource type="PackedScene" uid="uid://c4kx5xccyhajy" path="res://scenes/player.tscn" id="2_v3x27"]
+[ext_resource type="Texture2D" uid="uid://woff580w358y" path="res://assets/brackeys_platformer_assets copy/sprites/world_tileset.png" id="3_30g2k"]
+[ext_resource type="Script" path="res://scripts/day_night_cycle.gd" id="4_h41jq"]
+[ext_resource type="Texture2D" uid="uid://ci8q5e1rg11v" path="res://assets/daynightcycle-gradient-texture.tres" id="5_k6b6s"]
+[ext_resource type="PackedScene" uid="uid://c3jmm6imdjy4w" path="res://scenes/coin.tscn" id="6_0cjab"]
+[ext_resource type="PackedScene" uid="uid://dyn6ojtlxakui" path="res://scenes/hud.tscn" id="7_nfxk0"]
+[ext_resource type="PackedScene" uid="uid://bars5kg8qw5ja" path="res://scenes/water_ui.tscn" id="8_ar0hh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdogs"]
-texture = ExtResource("2_wjney")
+texture = ExtResource("3_30g2k")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -180,7 +184,11 @@ sources/0 = SubResource("TileSetAtlasSource_jdogs")
 
 [node name="Game" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_n234g")]
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_wdv5o")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_v3x27")]
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(4, 4)
@@ -194,7 +202,27 @@ layer_0/tile_data = PackedInt32Array(131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 655
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0.0474014, 0.638672, 1)
-script = ExtResource("3_c6ma0")
-gradient = ExtResource("4_ym3bw")
+script = ExtResource("4_h41jq")
+gradient = ExtResource("5_k6b6s")
 INGAME_SPEED = 10.0
 INITIAL_HOUR = 3
+
+[node name="coins" type="Node" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource("6_0cjab")]
+position = Vector2(39, 4)
+
+[node name="coin2" parent="coins" instance=ExtResource("6_0cjab")]
+position = Vector2(90, 5)
+
+[node name="coin3" parent="coins" instance=ExtResource("6_0cjab")]
+position = Vector2(140, 6)
+
+[node name="coin4" parent="coins" instance=ExtResource("6_0cjab")]
+position = Vector2(203, 7)
+
+[node name="HUD" parent="." instance=ExtResource("7_nfxk0")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WaterUI" parent="CanvasLayer" instance=ExtResource("8_ar0hh")]

@@ -15,26 +15,26 @@ func on_event_health_ui_ready(node: Node) -> void:
 
 func _set_health(value: float) -> void:
 	var parent: Node = get_parent()
-	if parent:
-		if value > max_health:
-			print('Full health already')
-		elif value <= 0:
-			print('You dead!')
-		else:
-			print('health: ', value)
+	if value > max_health:
+		print('Full health already')
+	elif value <= 0:
+		print('You dead!')
+	else:
+		print('health: ', value)
+		if parent:
 			EventController.emit_signal("on_health_changed", parent, value)	
-			health = value
+		health = value
 		
 func _get_health():
 	return health
 
 func _set_max_health(value):
 	var parent: Node = get_parent()
+	max_health = value
+	var new_health = max_health - health
+	healed(new_health)
 	if parent:
 		EventController.emit_signal("on_max_health_changed", parent, value)
-		max_health = value
-		var new_health = max_health - health
-		healed(new_health)
 		
 func _get_max_health():
 	return max_health

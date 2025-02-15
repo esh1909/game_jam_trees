@@ -26,7 +26,7 @@ func _get_water() -> float:
 func _set_max_water(value:float) ->void:
 	max_water = max(value, 1)
 	if water_ui_empty !=null:
-		water_ui_empty.set_size(Vector2(value * 32, 32))
+		water_ui_empty.set_size(Vector2(value*365, 365))
 
 func _get_max_water() -> float:
 	return max_water

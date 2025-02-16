@@ -118,6 +118,8 @@ script = ExtResource("1_rv1no")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(-2.38419e-07, -1)
+scale = Vector2(0.3125, 0.3125)
 sprite_frames = SubResource("SpriteFrames_ijysb")
 autoplay = "default"
 frame = 2

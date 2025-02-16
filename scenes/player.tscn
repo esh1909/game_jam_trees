@@ -60,6 +60,7 @@ animations = [{
 size = Vector2(9, 27)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 5
 script = ExtResource("1_wa41k")
 
 [node name="HealthController" parent="." instance=ExtResource("2_wv2rh")]

@@ -6,6 +6,7 @@ cutoff_hz = 520.0
 db = 3
 
 [resource]
+bus/0/mute = true
 bus/0/volume_db = -0.130497
 bus/0/effect/0/effect = SubResource("AudioEffectLowPassFilter_3oomu")
 bus/0/effect/0/enabled = true

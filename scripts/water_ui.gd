@@ -16,7 +16,7 @@ func _set_water(value:float) -> void:
 	water = clamp(value, 0, INF)
 	if water_ui_full != null:
 		water_ui_full.set_size(WATER_SIZE*Vector2(water,1))
-		print(water_ui_full.size)
+		# print(water_ui_full.size)
 			
 func _get_water() -> float:
 	return water

@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8ialhifierx3"]
+[gd_scene load_steps=12 format=3 uid="uid://comf7lmxavfpt"]
 
 [ext_resource type="Texture2D" uid="uid://woff580w358y" path="res://assets/brackeys_platformer_assets copy/sprites/world_tileset.png" id="1_lhyfe"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_t8smi"]
-[ext_resource type="PackedScene" uid="uid://bry0jqas0s0rv" path="res://platform_yellow.tscn" id="2_7v3ge"]
+[ext_resource type="PackedScene" path="res://platform_yellow.tscn" id="2_7v3ge"]
 [ext_resource type="PackedScene" uid="uid://c4kx5xccyhajy" path="res://scenes/player.tscn" id="3_wvhev"]
 [ext_resource type="Script" path="res://scripts/day_night_cycle.gd" id="4_pltfw"]
 [ext_resource type="Texture2D" uid="uid://ci8q5e1rg11v" path="res://assets/daynightcycle-gradient-texture.tres" id="5_bj3el"]
@@ -185,9 +185,11 @@ sources/0 = SubResource("TileSetAtlasSource_adhik")
 
 [node name="level2" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("day_night", "player")]
 unique_name_in_owner = true
 script = ExtResource("1_t8smi")
+day_night = NodePath("../DayNight")
+player = NodePath("../Player")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

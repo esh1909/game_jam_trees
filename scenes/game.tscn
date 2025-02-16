@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/day_night_cycle.gd" id="4_h41jq"]
 [ext_resource type="Texture2D" uid="uid://ci8q5e1rg11v" path="res://assets/daynightcycle-gradient-texture.tres" id="5_k6b6s"]
 [ext_resource type="PackedScene" uid="uid://c3jmm6imdjy4w" path="res://scenes/coin.tscn" id="6_0cjab"]
-[ext_resource type="PackedScene" uid="uid://bry0jqas0s0rv" path="res://platform_yellow.tscn" id="7_go5ir"]
+[ext_resource type="PackedScene" path="res://platform_yellow.tscn" id="7_go5ir"]
 [ext_resource type="PackedScene" uid="uid://dyn6ojtlxakui" path="res://scenes/hud.tscn" id="7_nfxk0"]
 [ext_resource type="PackedScene" uid="uid://bars5kg8qw5ja" path="res://scenes/water_ui.tscn" id="8_ar0hh"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bars5kg8qw5ja"]
 
 [ext_resource type="Script" path="res://scripts/water_ui.gd" id="1_cx6ol"]
-[ext_resource type="Texture2D" uid="uid://dd2ljia42pkky" path="res://assets/toChange/drop-of-water-pixel-art-vector-45391707.jpg" id="2_agetm"]
+[ext_resource type="Texture2D" uid="uid://c70p6yvha5qj8" path="res://water_drops/1.png" id="2_8mbbe"]
 
 [node name="WaterUI" type="Control"]
 layout_mode = 3
@@ -12,13 +12,12 @@ offset_bottom = 49.0
 script = ExtResource("1_cx6ol")
 
 [node name="WaterUIEmpty" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.243137)
 layout_mode = 0
 offset_top = -1.0
 offset_right = 360.0
 offset_bottom = 359.0
 scale = Vector2(0.03, 0.03)
-texture = ExtResource("2_agetm")
+texture = ExtResource("2_8mbbe")
 stretch_mode = 1
 
 [node name="WaterUIFull" type="TextureRect" parent="."]
@@ -27,5 +26,5 @@ offset_top = -1.0
 offset_right = 360.0
 offset_bottom = 359.0
 scale = Vector2(0.03, 0.03)
-texture = ExtResource("2_agetm")
+texture = ExtResource("2_8mbbe")
 stretch_mode = 1

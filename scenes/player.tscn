@@ -65,7 +65,6 @@ script = ExtResource("1_wa41k")
 
 [node name="HealthController" parent="." instance=ExtResource("2_wv2rh")]
 health = 2.0
-health_drop_rate = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

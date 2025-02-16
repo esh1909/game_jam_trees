@@ -63,8 +63,8 @@ size = Vector2(9, 27)
 script = ExtResource("1_wa41k")
 
 [node name="HealthController" parent="." instance=ExtResource("2_wv2rh")]
-max_health = 20.0
-health = 1.0
+health = 2.0
+health_drop_rate = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

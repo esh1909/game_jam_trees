@@ -29,6 +29,7 @@ INGAME_SPEED = 50.0
 INITIAL_HOUR = 19
 
 [node name="HUD" parent="." instance=ExtResource("7_nfxk0")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

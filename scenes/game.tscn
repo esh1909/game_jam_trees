@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgsuc00v1265t"]
+[gd_scene load_steps=12 format=3 uid="uid://dgsuc00v1265t"]
 
 [ext_resource type="AudioStream" uid="uid://c858s8eg1ex3c" path="res://assets/sounds/Night theme.wav" id="1_f3qbh"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wdv5o"]
@@ -9,9 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://bars5kg8qw5ja" path="res://scenes/water_ui.tscn" id="8_ar0hh"]
 [ext_resource type="Texture2D" uid="uid://c70p6yvha5qj8" path="res://water_drops/1.png" id="8_ctp4i"]
 [ext_resource type="Script" path="res://scenes/sun_ui.gd" id="9_l3258"]
-[ext_resource type="PackedScene" uid="uid://wmq4tfijau0y" path="res://scenes/level_0.tscn" id="10_blulc"]
+[ext_resource type="PackedScene" uid="uid://6c1yfvf8a37l" path="res://scenes/level_0.tscn" id="10_blulc"]
+[ext_resource type="Texture2D" uid="uid://ccko6lu4xakel" path="res://assets/sun.png" id="10_uxkxm"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_v3x27")]
+z_index = 8
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_f3qbh")
@@ -24,13 +32,6 @@ script = ExtResource("1_wdv5o")
 day_night = NodePath("../DayNight")
 player = NodePath("../Player")
 audio_player = NodePath("../AudioStreamPlayer")
-
-[node name="Player" parent="." instance=ExtResource("2_v3x27")]
-z_index = 0
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
 
 [node name="DayNight" type="CanvasModulate" parent="."]
 color = Color(0, 0.0474014, 0.638672, 1)
@@ -59,6 +60,6 @@ offset_right = 20.0
 offset_bottom = 56.0
 script = ExtResource("9_l3258")
 player = NodePath("../../Player")
-texture = ExtResource("8_ctp4i")
+texture = ExtResource("10_uxkxm")
 
 [node name="Level" parent="." instance=ExtResource("10_blulc")]

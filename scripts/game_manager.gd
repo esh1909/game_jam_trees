@@ -9,7 +9,7 @@ var _is_game_over: bool = false
 var time_hour = 0
 var GAME_OVER: Node
 
-var _LEVELS: Array[String] = ["res://scenes/level1.tscn", "res://scenes/level_2.tscn"]
+var _LEVELS: Array[String] = ["res://scenes/level_0.tscn", "res://scenes/level1.tscn", "res://scenes/level_2.tscn", "res://scenes/level_3.tscn"]
 var next_level = 1
 var current_level_node: Node
 

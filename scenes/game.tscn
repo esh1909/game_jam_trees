@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dyn6ojtlxakui" path="res://scenes/hud.tscn" id="7_nfxk0"]
 [ext_resource type="PackedScene" uid="uid://bars5kg8qw5ja" path="res://scenes/water_ui.tscn" id="8_ar0hh"]
 [ext_resource type="Texture2D" uid="uid://c70p6yvha5qj8" path="res://water_drops/1.png" id="8_ctp4i"]
-[ext_resource type="PackedScene" uid="uid://ciqlbja4ilxgv" path="res://scenes/level1.tscn" id="8_ns0se"]
 [ext_resource type="Script" path="res://scenes/sun_ui.gd" id="9_l3258"]
+[ext_resource type="PackedScene" uid="uid://wmq4tfijau0y" path="res://scenes/level_0.tscn" id="10_blulc"]
 
 [node name="Game" type="Node2D"]
 
@@ -61,4 +61,4 @@ script = ExtResource("9_l3258")
 player = NodePath("../../Player")
 texture = ExtResource("8_ctp4i")
 
-[node name="Level" parent="." instance=ExtResource("8_ns0se")]
+[node name="Level" parent="." instance=ExtResource("10_blulc")]

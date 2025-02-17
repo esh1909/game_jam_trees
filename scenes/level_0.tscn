@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://6c1yfvf8a37l"]
+[gd_scene load_steps=7 format=3 uid="uid://wmq4tfijau0y"]
 
 [ext_resource type="Texture2D" uid="uid://woff580w358y" path="res://assets/brackeys_platformer_assets copy/sprites/world_tileset.png" id="1_xwofw"]
 [ext_resource type="PackedScene" uid="uid://c3jmm6imdjy4w" path="res://scenes/coin.tscn" id="2_shyik"]
 [ext_resource type="PackedScene" uid="uid://bry0jqas0s0rv" path="res://scenes/platform_yellow.tscn" id="3_6pji8"]
 [ext_resource type="FontFile" uid="uid://l4iffjiiiu15" path="res://assets/brackeys_platformer_assets copy/fonts/PixelOperator8.ttf" id="4_i15ei"]
-[ext_resource type="PackedScene" uid="uid://c4kx5xccyhajy" path="res://scenes/player.tscn" id="5_oxtde"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wacxm"]
 texture = ExtResource("1_xwofw")
@@ -237,10 +236,3 @@ theme_override_font_sizes/font_size = 8
 text = "Survive the night by collecting water"
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="Player" parent="." instance=ExtResource("5_oxtde")]
-position = Vector2(253, -88)
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true

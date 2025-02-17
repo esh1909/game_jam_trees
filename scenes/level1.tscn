@@ -286,53 +286,40 @@ position = Vector2(342, 130)
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Yellow Platform" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(505, 300)
 
 [node name="Yellow Platform2" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(440, 221)
 
 [node name="Yellow Platform3" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(347, 298)
 
 [node name="Yellow Platform4" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(48, 293)
 
 [node name="Yellow Platform5" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(1, 223)
 
 [node name="Yellow Platform6" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(-312, 115)
 
 [node name="Yellow Platform7" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(-57, 120)
 
 [node name="Yellow Platform8" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(505, 300)
 
 [node name="Yellow Platform9" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(440, 221)
 
 [node name="Yellow Platform10" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(347, 298)
 
 [node name="Yellow Platform12" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(1, 223)
 
 [node name="Yellow Platform13" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(-312, 115)
 
 [node name="Yellow Platform14" parent="Platforms" instance=ExtResource("2_si43b")]
-visible = false
 position = Vector2(-57, 120)

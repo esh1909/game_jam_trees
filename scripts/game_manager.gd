@@ -1,10 +1,11 @@
 extends Node
 
 @onready var hud: CanvasLayer = $"../HUD"
-@export var water_needed: float = 5
 @export var day_night: Node
 @export var player: Node
+@export var audio_player: AudioStreamPlayer
 
+var _is_game_over: bool = false
 var time_hour = 0
 var GAME_OVER: Node
 
@@ -19,10 +20,13 @@ func _ready() -> void:
 	GAME_OVER = load("res://scenes/GameOverScreen.tscn").instantiate()
 	GAME_OVER.get_node("CanvasLayer/Restart").connect("pressed", _restart_game)
 	current_level_node = get_tree().root.get_node("/root/Game/Level")
+	audio_player.set_bus("Master")
 
 func _restart_game():
 	GAME_OVER.queue_free()
 	get_tree().reload_current_scene()
+	_is_game_over = false
+	audio_player.set_bus("Master")
 
 func _load_new_level():
 	var game_node: Node = get_tree().root.get_node("/root/Game")
@@ -36,8 +40,10 @@ func _load_new_level():
 	player.position = Vector2(0,0)
 
 func _on_dead(node: Node):
-	if node == player:
+	if node == player and not _is_game_over:
 		get_tree().root.add_child(GAME_OVER)
+		audio_player.set_bus("Muffled")
+		_is_game_over = true
 		# @warning_ignore("unused_variable")
 		# var curr_scene = get_node("/root/Game")
 		#get_tree().root.remove_child(curr_scene)

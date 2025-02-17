@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4kx5xccyhajy"]
+[gd_scene load_steps=11 format=3 uid="uid://c4kx5xccyhajy"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wa41k"]
 [ext_resource type="PackedScene" uid="uid://vxm103gi71a0" path="res://scenes/health_controller.tscn" id="2_wv2rh"]
 [ext_resource type="Texture2D" uid="uid://bvuhlw3u2n7o2" path="res://tree_frames/1.png" id="3_d74sc"]
+[ext_resource type="Script" path="res://scenes/sun_controller.gd" id="3_kbqaw"]
 [ext_resource type="Texture2D" uid="uid://b3nnx2spyukmh" path="res://tree_frames/2.png" id="4_edsia"]
 [ext_resource type="Texture2D" uid="uid://dumngd26qget8" path="res://tree_frames/3.png" id="5_eyb5o"]
 [ext_resource type="Texture2D" uid="uid://t7glrh7hq6co" path="res://tree_frames/4.png" id="6_f7umt"]
@@ -63,8 +64,14 @@ size = Vector2(9, 27)
 z_index = 5
 script = ExtResource("1_wa41k")
 
-[node name="HealthController" parent="." instance=ExtResource("2_wv2rh")]
+[node name="WaterController" parent="." instance=ExtResource("2_wv2rh")]
 health = 2.0
+health_drop_rate = 0.2
+
+[node name="SunController" parent="." instance=ExtResource("2_wv2rh")]
+script = ExtResource("3_kbqaw")
+health = 10.0
+health_drop_rate = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

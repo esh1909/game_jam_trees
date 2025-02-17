@@ -6,6 +6,18 @@ const JUMP_VELOCITY = -350.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+func _ready() -> void:
+	EventController.connect("day_started", on_day_start)
+	EventController.connect("night_started", on_night_start)
+	
+func on_day_start():
+	$SunController.health_drop_rate = - 0.1
+	$WaterController.health_drop_rate = 0.5
+	
+func on_night_start():
+	$SunController.health_drop_rate = 0.1
+	$WaterController.health_drop_rate = 0.1
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -20,9 +32,9 @@ func _physics_process(delta: float) -> void:
 	
 	# Flip the sprite
 	if direction > 0:
-		animated_sprite_2d.flip_h = false
+		animated_sprite_2d.flip_h = true
 	elif direction < 0:
-		animated_sprite_2d.flip_h =  true
+		animated_sprite_2d.flip_h =  false
 		
 # Play animations
 

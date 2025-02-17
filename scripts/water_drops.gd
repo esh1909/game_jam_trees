@@ -15,7 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 		game_manager.add_point()
 		
 		for child in body.get_children():
-			if child is HealthController:
+			if child is WaterController:
 				child.healed(health)
 		queue_free()
 		animation_player.play("pickup")

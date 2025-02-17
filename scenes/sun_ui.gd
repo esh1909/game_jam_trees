@@ -9,8 +9,8 @@ const WATER_SIZE: Vector2 = Vector2(32, 32)
 var water: float = 0.0: set = _set_water, get = _get_water
 
 func _ready() -> void:
-	EventController.connect("on_water_changed", on_event_health_changed)
-	EventController.emit_signal("on_water_ui_ready", player)
+	EventController.connect("on_sun_changed", on_event_health_changed)
+	EventController.emit_signal("on_sun_ui_ready", player)
 	water_ui_full.texture = texture
 	
 func _set_water(value:float) -> void:

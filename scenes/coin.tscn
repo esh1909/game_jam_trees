@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scripts/water_drops.gd" id="1_rv1no"]
 [ext_resource type="Texture2D" uid="uid://c70p6yvha5qj8" path="res://water_drops/1.png" id="2_rwmsk"]
 [ext_resource type="Texture2D" uid="uid://63g3wo3envs2" path="res://water_drops/2.png" id="3_0axck"]
-[ext_resource type="AudioStream" uid="uid://bbpaf3yicupag" path="res://assets/brackeys_platformer_assets copy/sounds/coin.wav" id="3_wgsvh"]
 [ext_resource type="Texture2D" uid="uid://xf7thswwvl42" path="res://water_drops/3.png" id="4_beej3"]
 [ext_resource type="Texture2D" uid="uid://1ps5iw4y1nsu" path="res://water_drops/4.png" id="5_k4uxq"]
+[ext_resource type="AudioStream" uid="uid://cxydfs4rq4k3f" path="res://assets/sounds/dropPickup.wav" id="6_skq3o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ijysb"]
 animations = [{
@@ -130,7 +130,7 @@ frame_progress = 0.353024
 shape = SubResource("CircleShape2D_78lvy")
 
 [node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_wgsvh")
+stream = ExtResource("6_skq3o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

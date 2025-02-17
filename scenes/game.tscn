@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgsuc00v1265t"]
+[gd_scene load_steps=13 format=3 uid="uid://dgsuc00v1265t"]
 
 [ext_resource type="AudioStream" uid="uid://c858s8eg1ex3c" path="res://assets/sounds/Night theme.wav" id="1_f3qbh"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wdv5o"]
+[ext_resource type="AudioStream" uid="uid://db7akjrxp7cy0" path="res://assets/sounds/morning.wav" id="2_p4bhs"]
 [ext_resource type="PackedScene" uid="uid://c4kx5xccyhajy" path="res://scenes/player.tscn" id="2_v3x27"]
 [ext_resource type="Script" path="res://scripts/day_night_cycle.gd" id="4_h41jq"]
+[ext_resource type="AudioStream" uid="uid://ct2s5prtabp66" path="res://assets/sounds/startup.wav" id="4_nhsnb"]
 [ext_resource type="Texture2D" uid="uid://ci8q5e1rg11v" path="res://assets/daynightcycle-gradient-texture.tres" id="5_k6b6s"]
 [ext_resource type="PackedScene" uid="uid://dyn6ojtlxakui" path="res://scenes/hud.tscn" id="7_nfxk0"]
 [ext_resource type="PackedScene" uid="uid://bars5kg8qw5ja" path="res://scenes/water_ui.tscn" id="8_ar0hh"]
@@ -14,24 +16,25 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("2_v3x27")]
-z_index = 8
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_f3qbh")
+[node name="BGM" type="AudioStreamPlayer" parent="."]
 volume_db = -11.243
-autoplay = true
 
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("day_night", "player", "audio_player")]
 unique_name_in_owner = true
 script = ExtResource("1_wdv5o")
 day_night = NodePath("../DayNight")
 player = NodePath("../Player")
-audio_player = NodePath("../AudioStreamPlayer")
+audio_player = NodePath("../BGM")
+night_bgm = ExtResource("1_f3qbh")
+morning_bgm = ExtResource("2_p4bhs")
+startup_sound = ExtResource("4_nhsnb")
+
+[node name="Player" parent="." instance=ExtResource("2_v3x27")]
+z_index = 0
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
 
 [node name="DayNight" type="CanvasModulate" parent="."]
 color = Color(0, 0.0474014, 0.638672, 1)

@@ -9,6 +9,7 @@ extends Area2D
 
 func _ready() -> void:
 	game_manager = get_tree().root.get_node("/root/Game/GameManager")
+	$PickUpSound.finished.connect(self.queue_free)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -17,6 +18,5 @@ func _on_body_entered(body: Node2D) -> void:
 		for child in body.get_children():
 			if child is WaterController:
 				child.healed(health)
-		queue_free()
 		animation_player.play("pickup")
 		#print("coin collected")

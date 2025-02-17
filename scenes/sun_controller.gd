@@ -20,7 +20,7 @@ func on_event_health_ui_ready(node: Node) -> void:
 func _set_health(value: float) -> void:
 	# print("set health "+ str(value))
 	var parent: Node = get_parent()
-	if value <= 0:
+	if value <= 0 and parent and not parent.dead:
 		print('You dead! sun')
 		EventController.emit_signal("on_die", parent)
 	else:

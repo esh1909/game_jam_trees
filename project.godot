@@ -24,6 +24,10 @@ EventController="*res://scripts/event_controller.gd"
 
 settings/stdout/print_fps=true
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 move_left={

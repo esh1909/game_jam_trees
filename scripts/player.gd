@@ -33,9 +33,11 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if _is_day:
-		if position.y > 60:
+		if position.y < 60:
+			print("sun!")
 			$SunController.health_drop_rate = -0.1
 		else:
+			print("too low")
 			$SunController.health_drop_rate = 0.1
 	# Add the gravity.
 	if not is_on_floor():

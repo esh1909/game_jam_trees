@@ -10,6 +10,10 @@ extends Area2D
 func _ready() -> void:
 	game_manager = get_tree().root.get_node("/root/Game/GameManager")
 	$PickUpSound.finished.connect(self.queue_free)
+	randomize()
+	var pitch_offset = (randi() % 4) 
+	$PickUpSound.pitch_scale = 1.2 + pitch_offset
+	print($PickUpSound.pitch_scale)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -19,4 +23,5 @@ func _on_body_entered(body: Node2D) -> void:
 			if child is WaterController:
 				child.healed(health)
 		animation_player.play("pickup")
+
 		#print("coin collected")

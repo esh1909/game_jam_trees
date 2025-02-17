@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciqlbja4ilxgv"]
+[gd_scene load_steps=7 format=3 uid="uid://ciqlbja4ilxgv"]
 
 [ext_resource type="Texture2D" uid="uid://woff580w358y" path="res://assets/brackeys_platformer_assets copy/sprites/world_tileset.png" id="1_ehh24"]
 [ext_resource type="PackedScene" uid="uid://c3jmm6imdjy4w" path="res://scenes/coin.tscn" id="1_ij6s5"]
 [ext_resource type="PackedScene" uid="uid://bry0jqas0s0rv" path="res://scenes/platform_yellow.tscn" id="2_si43b"]
+[ext_resource type="FontFile" uid="uid://l4iffjiiiu15" path="res://assets/brackeys_platformer_assets copy/fonts/PixelOperator8.ttf" id="4_5uuoe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bqf4c"]
 texture = ExtResource("1_ehh24")
@@ -329,3 +330,15 @@ position = Vector2(-57, 120)
 
 [node name="Yellow Platform15" parent="Platforms" instance=ExtResource("2_si43b")]
 position = Vector2(143, 145)
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+offset_left = -113.0
+offset_top = -19.0
+offset_right = 149.0
+offset_bottom = -6.0
+theme_override_fonts/font = ExtResource("4_5uuoe")
+theme_override_font_sizes/font_size = 8
+text = "Stay near the sun to fill synthesize more food for the night"
+horizontal_alignment = 1
+autowrap_mode = 2

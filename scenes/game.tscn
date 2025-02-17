@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dgsuc00v1265t"]
+[gd_scene load_steps=14 format=3 uid="uid://dgsuc00v1265t"]
 
 [ext_resource type="AudioStream" uid="uid://c858s8eg1ex3c" path="res://assets/sounds/Night theme.wav" id="1_f3qbh"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_wdv5o"]
@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bars5kg8qw5ja" path="res://scenes/water_ui.tscn" id="8_ar0hh"]
 [ext_resource type="Texture2D" uid="uid://c70p6yvha5qj8" path="res://water_drops/1.png" id="8_ctp4i"]
 [ext_resource type="Script" path="res://scenes/sun_ui.gd" id="9_l3258"]
-[ext_resource type="PackedScene" uid="uid://6c1yfvf8a37l" path="res://scenes/level_0.tscn" id="10_blulc"]
-[ext_resource type="Texture2D" uid="uid://ccko6lu4xakel" path="res://assets/sun.png" id="10_uxkxm"]
+[ext_resource type="PackedScene" uid="uid://wmq4tfijau0y" path="res://scenes/level_0.tscn" id="10_blulc"]
+[ext_resource type="Texture2D" uid="uid://ccko6lu4xakel" path="res://assets/sun.png" id="12_orqw1"]
 
 [node name="Game" type="Node2D"]
 
@@ -30,7 +30,6 @@ morning_bgm = ExtResource("2_p4bhs")
 startup_sound = ExtResource("4_nhsnb")
 
 [node name="Player" parent="." instance=ExtResource("2_v3x27")]
-z_index = 0
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -63,6 +62,6 @@ offset_right = 20.0
 offset_bottom = 56.0
 script = ExtResource("9_l3258")
 player = NodePath("../../Player")
-texture = ExtResource("10_uxkxm")
+texture = ExtResource("12_orqw1")
 
 [node name="Level" parent="." instance=ExtResource("10_blulc")]

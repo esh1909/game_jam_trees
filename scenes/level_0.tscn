@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6c1yfvf8a37l"]
+[gd_scene load_steps=7 format=3 uid="uid://wmq4tfijau0y"]
 
 [ext_resource type="Texture2D" uid="uid://woff580w358y" path="res://assets/brackeys_platformer_assets copy/sprites/world_tileset.png" id="1_xwofw"]
 [ext_resource type="PackedScene" uid="uid://c3jmm6imdjy4w" path="res://scenes/coin.tscn" id="2_shyik"]
@@ -219,10 +219,10 @@ position = Vector2(256, -38)
 
 [node name="Label" type="Label" parent="labels"]
 texture_filter = 1
-offset_left = -246.0
-offset_top = -45.0
-offset_right = 24.0
-offset_bottom = -15.0
+offset_left = 118.0
+offset_top = -108.0
+offset_right = 388.0
+offset_bottom = -78.0
 theme_override_fonts/font = ExtResource("4_i15ei")
 theme_override_font_sizes/font_size = 8
 text = "Move using the arrow keys or A and D. Jump using the spacebar, W or the up arrow key"
@@ -231,10 +231,10 @@ autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="labels"]
 texture_filter = 1
-offset_left = 46.0
-offset_top = -27.0
-offset_right = 308.0
-offset_bottom = -14.0
+offset_left = 120.0
+offset_top = -33.0
+offset_right = 382.0
+offset_bottom = -20.0
 theme_override_fonts/font = ExtResource("4_i15ei")
 theme_override_font_sizes/font_size = 8
 text = "Survive the night by collecting water"

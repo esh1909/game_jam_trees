@@ -115,7 +115,6 @@ _data = {
 
 [node name="water_drops" type="Area2D"]
 script = ExtResource("1_rv1no")
-health = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -131,6 +130,7 @@ shape = SubResource("CircleShape2D_78lvy")
 
 [node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_skq3o")
+volume_db = -22.961
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
